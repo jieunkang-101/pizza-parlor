@@ -4,7 +4,15 @@ function Pizza(size) {
   this.toppings = []
 }
 var cost = 10;
-var toppings = ["Cheese", "Sausage", "Olives", "Mushrooms", "Sun-Dried Tomatoes"];
+
+Pizza.prototype.addTopping = function() {
+  for (var i=0; i<toppings.length; i++) {
+    var toppings = ["Cheese", "Sausage", "Olives", "Mushrooms", "Sun-Dried Tomatoes"];
+    var addTopping = [];
+    addTopping.push(toppings[i]);
+  }
+  console.log(addTopping);
+}
 
 Pizza.prototype.costOfPizza = function() {
   if (this.size === "Family") {
@@ -22,13 +30,23 @@ Pizza.prototype.costOfPizza = function() {
   return "$" + cost;
 }
 
+function Topping() {
+  this.topping = topping;
+} 
+
 
 // =========User Interface Logic===========
 var pizza = new Pizza();
+
 
 $(document).ready(function() {
   $("form#frmGetStarted").submit(function(event) {
     event.preventDefault();
     $("#myModal").show();
+    var inputtedSize = $("input:radio[name=pizzaSize]:checked").val();
+    var inputtedToppings = $("input:checkbox[name=pizzaToppings]:checked").val();
+    var newOrder = new Pizza (inputtedSize, inputtedToppings);
+    pizza.costOfPizza(newOrder);
+    console.log (pizza);
   });
 });
