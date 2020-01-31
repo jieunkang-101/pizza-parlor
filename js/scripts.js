@@ -1,49 +1,25 @@
 // =============Business Logic=============
 function Pizza(size, toppings) {
   this.size = size,
-  this.toppings = toppings
+  this.toppings = toppings,
+  this.cost = 10
 }
 
-// Pizza.prototype.addTopping = function() {
-//   $('input[type:"checkbox"]').click(function() {
-//     if($(this).prop("checked") == true) {
-//       toppings.push(inputtedToppings);
-//     }
-//   });
-// }
-
-// Pizza.prototype.addTopping = function() {
-//   for (var i=0; i<toppings.length; i++) {
-//     var toppings = ["Cheese", "Sausage", "Olives", "Mushrooms", "Sun-Dried Tomatoes"];
-//     var addTopping = [];
-//     addTopping.push(toppings[i]);
-//   }
-//   this.customToppings.push(addTopping);
-// }
-
-var cost = 10;
-
 Pizza.prototype.costOfPizza = function() {
-  if (this.size === "Family") {
+  if (this.size === "familySize") {
     this.cost += 4;
-  } else if (this.size === "Large") {
+  } else if (this.size === "largeSize") {
     this.cost += 2;
   } else {
     this.cost; //check!
   }
-  // if (this.toppings) {
-  //   for (var i=0; i<toppings.length; i++) {
-  //     this.cost += (i+1) * 2
-  //   }
-  // }
-  return "$" + cost;
+  if (this.toppings) {
+    this.cost += (this.toppings.length) * 2 
+  }
+  return this.cost;
 }
 
-
-
-
 // =========User Interface Logic===========
-//var pizza = new Pizza();
 
 function addToCartListeners() {
   $("div.modal-footer").on("click", "button#addPizzaToCart", function() {
@@ -55,13 +31,12 @@ function addToCartListeners() {
       inputtedToppings.push($(this).val());
     });
     console.log(inputtedToppings);
-    
-    var pizza = new Pizza (inputtedSize, inputtedToppings);
-    //pizza.costOfPizza(newOrder);
-    console.log (pizza);
+
+    var newOrder = new Pizza (inputtedSize, inputtedToppings);
+    newOrder.costOfPizza();
+    console.log (newOrder);
   });
 }
-
 
 $(document).ready(function() {
   addToCartListeners();
