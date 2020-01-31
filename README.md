@@ -5,7 +5,7 @@
 #### By **_Jieun Kang_**
 
 ## Description
-A website for a pizza company where a user can choose individual toppings and a size to order a pizza and see the final cost.
+A website for a pizza company where a user can choose individual toppings and a size to order a pizza. It displays output the cost of pizza depending on the slections user chosen.
 
 ## Setup/Installation Requirements
 
@@ -17,11 +17,11 @@ A website for a pizza company where a user can choose individual toppings and a 
 
 ## Behavior Driven Development Specifications
 
-| Behavior (Spec)                 | Input    | Output|
-| :------------------------------ | :------- | :---- |
-| Webpage displays the selection of size when user submits a form | User click "ORDER NOW" button | Select box by size (Family, Large, Medium) |
-| Webpage displays the selection of one or more toppings when user submits a form | User choose a size | Checkbox for individual toppings |
-| Webpage outputs total price of pizza when user submits a form | User click "ADD TO CART" button | Total Price: $14 |
+| Behavior (Spec)                 | Input     | Output |
+| :------------------------------ | :-------: | :----: |
+| Webpage displays the selection of size when user submits a form | User click <br /> "ORDER NOW" button | Select box by size (Family, Large, Medium) |
+| Webpage displays the selection of one or more toppings when user submits a form | User choose a size | Checkbox for individual toppings <br />(Chesse, Sausage, Olives, etc.) |
+| Webpage outputs total price of pizza when user submits a form | User click <br />"ADD TO CART" button | Total Price: $14 |
 | Webpage refreshs when the user wants to cancel order | User click "CANCEL" button | Refreshed webpage |
 
 ## Technologies Used
