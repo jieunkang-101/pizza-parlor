@@ -3,23 +3,26 @@ function Pizza(size) {
   this.size = size,
   this.toppings = []
 }
-
+var cost = 10;
 var toppings = ["Chesse", "Sausage", "Olives", "Mushrooms", "Sun-Dried Tomatoes"];
 
 Pizza.prototype.costOfPizza = function() {
-  var cost = 10;
   if (this.size === "Family") {
-    cost += 4;
+    this.cost += 4;
   } else if (this.size === "Large") {
-    cost += 2;
+    this.cost += 2;
   } else {
     this.cost; //check!
-  } return "$" + cost;
+  }
+  if (this.toppings) {
+    for (var i=0; i<toppings.length; i++) {
+      this.cost += (i+1) * 2
+    }
+  }
+  return "$" + cost;
 }
 
 
-
-
-
-
 // =========User Interface Logic===========
+var pizza = new Pizza();
+
