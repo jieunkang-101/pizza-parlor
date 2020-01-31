@@ -26,3 +26,9 @@ Pizza.prototype.costOfPizza = function() {
 // =========User Interface Logic===========
 var pizza = new Pizza();
 
+$(document).ready(function() {
+  $("form#frmGetStarted").submit(function(event) {
+    event.preventDefault();
+    $("#myModal").show();
+  });
+});

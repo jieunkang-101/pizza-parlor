@@ -11,58 +11,77 @@
     <div class="container">
       <div id="welcome">
         <form id="frmGetStarted">
-          <button type="submit" class="btn btn-danger btn-lg btn-block" id="frmGetStartedBtn">ORDER NOW</button>
+          <button type="submit" class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#myModal">ORDER NOW</button>
         </form>
       </div>
-      <br>
-      <br>
-      <form>
-        <div class="form-group">
-          <label for="size">Select Your Size</label>
-          <div class="radio">
-            <label class="radio-inline">
-              <input type="radio" name="pizzaSize" value="familySize"> Family (16 inches)
-            </label>
-            <label class="radio-inline">
-              <input type="radio" name="pizzaSize" value="largeSize"> Large (14 inches)
-            </label>
-            <label class="radio-inline">
-              <input type="radio" name="pizzaSize" value="mediumSize"> Medium (12 inches)
-            </label>
+      <div class="modalFade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+          <div class="modal-header"></div>   <!--header -->
+            <div class="modal-body">
+              <form>
+                <div class="form-group" id="displaySize">
+                  <label for="size">Select Your Size</label>
+                  <div class="radio">
+                    <label class="radio-inline">
+                      <input type="radio" name="pizzaSize" value="familySize"> Family (16 inches)
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="pizzaSize" value="largeSize"> Large (14 inches)
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="pizzaSize" value="mediumSize"> Medium (12 inches)
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group" id="displayToppings">
+                  <label for="toppings">Customize Included Toppings</label>
+                  <p>Additional toppings $2 each.</p>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="cheese"> Cheese
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="Sausage"> Sausage
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="Olives"> Olives
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="Mushrooms"> Mushrooms
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="Sun-Dried Tomatoes"> Sun-Dried Tomatoes
+                    </label>
+                  </div>
+                </div>
+              </form>
+              <br>
+              <br>
+              <div id="showPrice">
+                <h4>Order Contents</h4>
+                <hr>
+                <p><span class="pizza-size"></span></p>
+                <p><span class="add-toppings"></span></p>
+                <hr>
+                <p>TOTAL: <span class="total-price"></span></p>
+              </div>
+            </div>  
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-danger" id="cancelAddPizza" data-dismiss="modal" id="modalClose">CANCEL</button>
+              <button type="submit" class="btn btn-danger" id="addPizzaToCart">ADD TO CART</button>
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="toppings">Customize Included Toppings</label>
-          <p>Additional toppings $2 each.</p>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="cheese"> Cheese
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="Sausage"> Sausage
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="Olives"> Olives
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="Mushrooms"> Mushrooms
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="Sun-Dried Tomatoes"> Sun-Dried Tomatoes
-            </label>
-          </div>
-        </div>
-        <button type="submit" class="btn btn-danger" id="cancelAddPizza">CANCEL</button>
-        <button type="submit" class="btn btn-danger" id="addPizzaToCart">ADD TO CART</button>
-      </form>
+        </div>    
+      </div>  
     </div>
   </body>
 </html>
