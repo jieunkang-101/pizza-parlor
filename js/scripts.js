@@ -4,7 +4,7 @@ function Pizza(size) {
   this.toppings = []
 }
 var cost = 10;
-var toppings = ["Chesse", "Sausage", "Olives", "Mushrooms", "Sun-Dried Tomatoes"];
+var toppings = ["Cheese", "Sausage", "Olives", "Mushrooms", "Sun-Dried Tomatoes"];
 
 Pizza.prototype.costOfPizza = function() {
   if (this.size === "Family") {
