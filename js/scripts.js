@@ -1,16 +1,16 @@
 // =============Business Logic=============
-function Pizza(size) {
+function Pizza(size, toppings) {
   this.size = size,
-  this.toppings = []
+  this.toppings = toppings
 }
 
-Pizza.prototype.addTopping = function() {
-  $('input[type:"checkbox"]').click(function() {
-    if($(this).prop("checked") == true) {
-      toppings.push(inputtedToppings);
-    }
-  });
-}
+// Pizza.prototype.addTopping = function() {
+//   $('input[type:"checkbox"]').click(function() {
+//     if($(this).prop("checked") == true) {
+//       toppings.push(inputtedToppings);
+//     }
+//   });
+// }
 
 // Pizza.prototype.addTopping = function() {
 //   for (var i=0; i<toppings.length; i++) {
@@ -43,16 +43,18 @@ Pizza.prototype.costOfPizza = function() {
 
 
 // =========User Interface Logic===========
-var pizza = new Pizza();
+//var pizza = new Pizza();
 
 function addToCartListeners() {
   $("div.modal-footer").on("click", "button#addPizzaToCart", function() {
     var inputtedSize = $("input:radio[name=pizzaSize]:checked").val();
     console.log(inputtedSize);
-    var inputtedToppings = $("input:checkbox[name=pizzaToppings]:checked").val();
+    var inputtedToppings = [];
+    inputtedToppings.push($("input:checkbox[name=pizzaToppings]:checked").val());
+  
     console.log(inputtedToppings);
-    var newOrder = new Pizza (inputtedSize, inputtedToppings);
-    pizza.costOfPizza(newOrder);
+    var pizza = new Pizza (inputtedSize, inputtedToppings);
+    //pizza.costOfPizza(newOrder);
     console.log (pizza);
   });
 }
