@@ -49,10 +49,13 @@ function addToCartListeners() {
   $("div.modal-footer").on("click", "button#addPizzaToCart", function() {
     var inputtedSize = $("input:radio[name=pizzaSize]:checked").val();
     console.log(inputtedSize);
+ 
     var inputtedToppings = [];
-    inputtedToppings.push($("input:checkbox[name=pizzaToppings]:checked").val());
-  
+    $("input[name='pizzaToppings']:checked").each(function () {
+      inputtedToppings.push($(this).val());
+    });
     console.log(inputtedToppings);
+    
     var pizza = new Pizza (inputtedSize, inputtedToppings);
     //pizza.costOfPizza(newOrder);
     console.log (pizza);
