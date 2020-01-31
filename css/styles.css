@@ -13,5 +13,8 @@ background-position-y: 62px;
 
 #myModal {
   display: none;
-  
+}
+
+#showPrice {
+  display: none;
 }

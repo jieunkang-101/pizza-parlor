@@ -24,19 +24,27 @@ Pizza.prototype.costOfPizza = function() {
 function addToCartListeners() {
   $("div.modal-footer").on("click", "button#addPizzaToCart", function() {
     var inputtedSize = $("input:radio[name=pizzaSize]:checked").val();
-    console.log(inputtedSize);
- 
     var inputtedToppings = [];
     $("input[name='pizzaToppings']:checked").each(function () {
       inputtedToppings.push($(this).val());
     });
-    console.log(inputtedToppings);
-
     var newOrder = new Pizza (inputtedSize, inputtedToppings);
     newOrder.costOfPizza();
-    console.log (newOrder);
+    $("#showPrice").show();
+    $(".pizza-size").html(inputtedSize);
+    $(".add-toppings").html(inputtedToppings);
+    $(".total-price").html("$" + newOrder.cost);
   });
 }
+
+// function cancelListeners() {
+//   $("div.modal-footer").on("click", "button#cancelAddPizza", function() {
+//     $("input:radio[name=pizzaSize]:checked").val("");
+//     $("input[name='pizzaToppings']:checked").val("")
+//     //$("#showPrice").show();
+//     //location.reload();
+//   }); 
+// }
 
 $(document).ready(function() {
   addToCartListeners();
