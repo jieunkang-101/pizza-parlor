@@ -20,6 +20,14 @@ Pizza.prototype.costOfPizza = function() {
 }
 
 // =========User Interface Logic===========
+function cancelListeners() {
+  $("div.modal-footer").on("click", "button#cancelAddPizza", function() {
+    $(':checkbox:checked').prop('checked',false);
+    $(':radio:checked').prop('checked',false);
+    $("#showPrice").hide();
+  }); 
+}
+
 
 function addToCartListeners() {
   $("div.modal-footer").on("click", "button#addPizzaToCart", function() {
@@ -37,16 +45,9 @@ function addToCartListeners() {
   });
 }
 
-// function cancelListeners() {
-//   $("div.modal-footer").on("click", "button#cancelAddPizza", function() {
-//     $("input:radio[name=pizzaSize]:checked").val("");
-//     $("input[name='pizzaToppings']:checked").val("")
-//     //$("#showPrice").show();
-//     //location.reload();
-//   }); 
-// }
 
 $(document).ready(function() {
+  cancelListeners();
   addToCartListeners();
   $("form#frmGetStarted").submit(function(event) {
     event.preventDefault();
