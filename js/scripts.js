@@ -6,9 +6,9 @@ function Pizza(size, toppings) {
 }
 
 Pizza.prototype.costOfPizza = function() {
-  if (this.size === "familySize") {
+  if (this.size === "Family") {
     this.cost += 4;
-  } else if (this.size === "largeSize") {
+  } else if (this.size === "Large") {
     this.cost += 2;
   } else {
     this.cost; //check!
@@ -25,29 +25,41 @@ function cancelListeners() {
     $(':checkbox:checked').prop('checked',false);
     $(':radio:checked').prop('checked',false);
     $("#showPrice").hide();
+    $(".close").click(function() {
+      $("#myModal").hide();
+      $("#displayToppings").hide();
+      $(':checkbox:checked').prop('checked',false);
+      $(':radio:checked').prop('checked',false);
+      $("#showPrice").hide();
+    });
   }); 
 }
 
+function addDisplayToppings() {
+  $("div#chooseOpt").on("click", "input:radio[name='toppingOpt']", function() {
+    $("#displayToppings").show();
+  });  
+}
 
 function addToCartListeners() {
   $("div.modal-footer").on("click", "button#addPizzaToCart", function() {
     var inputtedSize = $("input:radio[name=pizzaSize]:checked").val();
     var inputtedToppings = [];
-    $("input[name='pizzaToppings']:checked").each(function () {
+    $("input:checkbox[name='pizzaToppings']:checked").each(function () {
       inputtedToppings.push($(this).val());
     });
     var newOrder = new Pizza (inputtedSize, inputtedToppings);
     newOrder.costOfPizza();
     $("#showPrice").show();
     $(".pizza-size").html(inputtedSize);
-    $(".add-toppings").html(inputtedToppings);
+    $(".add-toppings").html(" " + inputtedToppings);
     $(".total-price").html("$" + newOrder.cost);
   });
 }
 
-
 $(document).ready(function() {
   cancelListeners();
+  addDisplayToppings();
   addToCartListeners();
   $("form#frmGetStarted").submit(function(event) {
     event.preventDefault();
