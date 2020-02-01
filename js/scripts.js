@@ -1,11 +1,15 @@
 // =============Business Logic=============
-function Pizza(size, toppings) {
+function Pizza(menu, size, toppings) {
+  this.menu = menu,
   this.size = size,
   this.toppings = toppings,
   this.cost = 10
 }
 
 Pizza.prototype.costOfPizza = function() {
+  if (this.menu === "Pepperoni") {
+    this.cost = 11;
+  }
   if (this.size === "Family") {
     this.cost += 4;
   } else if (this.size === "Large") {
@@ -46,14 +50,17 @@ function addToCartListeners() {
     $("#showPrice").hide();
   });
   $("div.modal-footer").on("click", "button#addPizzaToCart", function() {
+    var inputtedMenu = $("input:radio[name=menu]:checked").val();
     var inputtedSize = $("input:radio[name=pizzaSize]:checked").val();
     var inputtedToppings = [];
     $("input:checkbox[name='pizzaToppings']:checked").each(function () {
       inputtedToppings.push($(this).val());
     });
-    var newOrder = new Pizza (inputtedSize, inputtedToppings);
+    var newOrder = new Pizza (inputtedMenu, inputtedSize, inputtedToppings);
     newOrder.costOfPizza();
+    $("#myModal").hide();
     $("#showPrice").show();
+    $(".menu").html(inputtedMenu);
     $(".pizza-size").html(inputtedSize);
     $(".add-toppings").html(" " + inputtedToppings);
     $(".total-price").html("$" + newOrder.cost);

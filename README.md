@@ -19,8 +19,8 @@ A website for a pizza company where a user can choose individual toppings and a 
 
 | Behavior (Spec)                 | Input     | Output |
 | :------------------------------ | :-------: | :----: |
-| Webpage displays the selection of size when user submits a form | User click <br /> "ORDER NOW" button | Radios for selecting a size <br />(Family, Large, Medium) |
-| Webpage displays the selection of one or more toppings when user submits a form | User choose<br /> a size | Checkboxes for selecting toppings (Cheese, Sausage, etc.) |
+| Webpage displays the selection of menu & a size when user submits a form | User click <br /> "ORDER NOW" button | Radios for selecting menu(Margherita, Pepperoni) & a size(Family, Large, Medium) |
+| Webpage displays the selection of one or more toppings when user submits a form | User choose<br /> menu & a size | Checkboxes for selecting toppings (Cheese, Sausage, etc.) |
 | Webpage outputs total price of pizza when user submits a form | User click <br />"ADD TO CART" button | Total Price: $14 |
 | Webpage refreshs when the user wants to cancel order | User click "CANCEL" button | Refreshed webpage |
 
