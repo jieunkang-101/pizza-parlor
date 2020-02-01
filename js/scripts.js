@@ -33,7 +33,7 @@ function cancelListeners() {
 }
 
 function addDisplayToppings() {
-  $("div#chooseOpt").on("click", "input:radio[name='toppingOpt']", function() {
+  $("div#chooseOpt").on("click", "input:radio[value='addTopping']", function() {
     $("#displayToppings").show();
   });  
 }
@@ -78,10 +78,27 @@ function addAddressListeners() {
   });   
 }
 
+function addPickUpListeners() {
+  $("div#orderOpt").on("click", "input:radio[value='PickUp']", function() {
+    $("#modal-pickup").show();
+    $(".close").click(function() {
+      $("#modal-pickup").hide();
+    });   
+    $("#showOpt").hide();
+    $(".menu").html(inputtedMenu);
+    $(".pizza-size").html(inputtedSize);
+    $(".add-toppings").html(" " + inputtedToppings);
+    $(".total-price").html(" " + "$" + newOrder.cost);
+  });   
+}
+
 function addCheckoutListeners() {
   $("div.checkout").on("click", "button#checkoutBtn", function() {
-    location.reload();
-    alert("Thank you for order!")
+    $("#modal-delivery").show();
+    $(".close").click(function() {
+      $("#modal-delivery").hide();
+    });  
+    $("#showOpt").hide();
   });   
 }
 
@@ -91,9 +108,13 @@ $(document).ready(function() {
   addToCartListeners();
   addDeliveryListeners();
   addAddressListeners();
+  addPickUpListeners();
   addCheckoutListeners();
   $("form#frmGetStarted").submit(function(event) {
     event.preventDefault();
     $("#myModal").show();
+    $("#showOpt").hide();
+    $("#showCheckout").hide();
+    $(':radio:checked').prop('checked',false);
   });
 });
