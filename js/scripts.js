@@ -63,7 +63,7 @@ function addToCartListeners() {
   });
 }
 
-function addDeliveryListeners() {
+function deliveryListeners() {
   $("div#orderOpt").on("click", "input:radio[value='Delivery']", function() {
     $("#displayAddressFrm").show();
   });   
@@ -78,7 +78,7 @@ function addAddressListeners() {
   });   
 }
 
-function addPickUpListeners() {
+function pickUpListeners() {
   $("div#orderOpt").on("click", "input:radio[value='PickUp']", function() {
     $("#modal-pickup").show();
     $(".close").click(function() {
@@ -92,7 +92,7 @@ function addPickUpListeners() {
   });   
 }
 
-function addCheckoutListeners() {
+function checkoutListeners() {
   $("div.checkout").on("click", "button#checkoutBtn", function() {
     $("#modal-delivery").show();
     $(".close").click(function() {
@@ -106,10 +106,10 @@ $(document).ready(function() {
   cancelListeners();
   addDisplayToppings();
   addToCartListeners();
-  addDeliveryListeners();
+  deliveryListeners();
   addAddressListeners();
-  addPickUpListeners();
-  addCheckoutListeners();
+  pickUpListeners();
+  checkoutListeners();
   $("form#frmGetStarted").submit(function(event) {
     event.preventDefault();
     $("#myModal").show();

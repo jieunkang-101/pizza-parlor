@@ -3,7 +3,7 @@ font-family: 'Poppins', sans-serif;
 background-image: url("../img/pizza-main.jpg");
 background-repeat: no-repeat;
 background-size: cover;
-background-position-y: 100px;
+background-position-y: 110px;
 }
 
 #container {
@@ -20,7 +20,7 @@ H1 {
 #welcome {
   display: flex;
   justify-content: center;
-  height: 200px;
+  height: 150px;
   align-items: center;
 }
 
@@ -29,7 +29,7 @@ H1 {
   font-family: 'Paytone One', sans-serif;
 }
 
-#myModal, #myModal2 {
+#myModal, #myModal2, #displayToppings, #showCheckout, #displayAddressFrm, #showOpt  {
   display: none;
 }
 
@@ -50,43 +50,17 @@ img {
   padding: 70px;
 }
 
-#displayToppings {
-  display: none;
-}
-
 .label-font {
   font-size: 1.5em;
   color: rgb(54, 7, 7);
 }
 
-input[type="radio"] {
+input[type="radio"], input[type="checkbox"] {
   margin-right: 5px;
   margin-left: 50px;
 }
 
-input[type="checkbox"] {
-  margin-right: 5px;
-  margin-left: 50px;
-}
-
-.add-address {
+.add-address, .checkout {
   display: flex;
   justify-content: flex-end;
-}
-
-.checkout {
-  display: flex;
-  justify-content: flex-end;
-}
-  
-#showCheckout {
-  display: none;
-}
-
-#displayAddressFrm {
-  display: none;
-}
-
-#showOpt {
-  display: none;
 }

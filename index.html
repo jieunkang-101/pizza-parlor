@@ -10,7 +10,6 @@
   </head>
   <body>
     <h1>Pizza Hat</h1>
-    <i class="fas fa-pizza-slice"></i>
     <div class="container">
       <div id="welcome">
         <form id="frmGetStarted">
@@ -26,6 +25,7 @@
             <div class="modal-body">
               <div id="pizzaMenu">
                 <label for="menu" class="label-font">Select Your Pizza</label>
+                <br>
                 <br>
                 <div class="row">
                   <div class="col-lg-6">
@@ -49,61 +49,62 @@
                 </div> 
               </div>
               <hr>
-              <form>
-                <div class="form-group" id="displaySize">
-                  <label for="size" class="label-font">Select Your Size</label>
-                  <div class="radio">
-                    <label class="radio-inline">
-                      <input type="radio" name="pizzaSize" value="Family"> Family (16 inches) ..... +$4
-                    </label>
-                    <label class="radio-inline">
-                      <input type="radio" name="pizzaSize" value="Large"> Large (14 inches) ..... +$2
-                    </label>
-                    <label class="radio-inline">
-                      <input type="radio" name="pizzaSize" value="Medium" checked> Medium (12 inches)
-                    </label>
-                  </div>
-                  <hr>
-                  <label for="option" class="label-font">Additional Customization</label>   
-                  <div class="radio" id="chooseOpt">
-                    <label class="radio-inline">
-                      <p><em>- Additional toppings $2 each.</em></p>
-                      <input type="radio" name="toppingOpt" value="addTopping"> Add Additional Toppings
-                    </label>
-                    <label class="radio-inline">
-                      <input type="radio" name="toppingOpt" value="noTopping" checked> No Customization
-                    </label>
-                  </div>    
+              <div class="form-group" id="displaySize">
+                <label for="size" class="label-font">Select Your Size</label>
+                <br>
+                <br>
+                <div class="radio">
+                  <label class="radio-inline">
+                    <input type="radio" name="pizzaSize" value="Family"> Family (16 inches) ..... +$4
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="pizzaSize" value="Large"> Large (14 inches) ..... +$2
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="pizzaSize" value="Medium" checked> Medium (12 inches)
+                  </label>
                 </div>
-                <div class="form-group" id="displayToppings">
-                  <h4>Select Your Toppings</h4>
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" name="pizzaToppings" value="Cheese"> Cheese
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" name="pizzaToppings" value="Sausage"> Sausage
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" name="pizzaToppings" value="Olives"> Olives
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" name="pizzaToppings" value="Mushrooms"> Mushrooms
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" name="pizzaToppings" value="Sun-Dried Tomatoes"> Sun-Dried Tomatoes
-                    </label>
-                  </div>
+                <hr>
+                <label for="option" class="label-font">Additional Customization</label>   
+                <p><em>- Additional toppings $2 each.</em></p>
+                <div class="radio" id="chooseOpt">
+                  <label class="radio-inline">
+                    <input type="radio" name="toppingOpt" value="addTopping"> Add Additional Toppings
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="toppingOpt" value="noTopping" checked> No Customization
+                  </label>
+                </div>    
+              </div>
+              <br>
+              <div class="form-group" id="displayToppings">
+                <h4>Select Your Toppings</h4>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="pizzaToppings" value="Cheese"> Cheese
+                  </label>
                 </div>
-              </form>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="pizzaToppings" value="Sausage"> Sausage
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="pizzaToppings" value="Olives"> Olives
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="pizzaToppings" value="Mushrooms"> Mushrooms
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="pizzaToppings" value="Sun-Dried Tomatoes"> Sun-Dried Tomatoes
+                  </label>
+                </div>
+              </div>
             </div>  
             <div class="modal-footer">
               <button type="submit" class="btn btn-danger" id="cancelAddPizza" data-dismiss="modal">CANCEL</button>
@@ -111,7 +112,7 @@
             </div>
           </div>
         </div>    
-      </div>  <!-- modal close -->
+      </div>
       <div id="showOpt">
         <h4>Order Options</h4>
         <div class="radio" id="orderOpt">
