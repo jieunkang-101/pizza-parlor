@@ -15,7 +15,7 @@ Pizza.prototype.costOfPizza = function() {
   } else if (this.size === "Large") {
     this.cost += 2;
   } else {
-    this.cost; //check!
+    this.cost; 
   }
   if (this.toppings) {
     this.cost += (this.toppings.length) * 2 
@@ -24,12 +24,10 @@ Pizza.prototype.costOfPizza = function() {
 }
 
 // =========User Interface Logic===========
-
 function cancelListeners() {
   $("div.modal-footer").on("click", "button#cancelAddPizza", function() {
     $(':checkbox:checked').prop('checked',false);
     $(':radio:checked').prop('checked',false);
-    $("#showPrice").hide();
     $("#displayToppings").hide();
   }); 
 }
@@ -37,7 +35,6 @@ function cancelListeners() {
 function addDisplayToppings() {
   $("div#chooseOpt").on("click", "input:radio[name='toppingOpt']", function() {
     $("#displayToppings").show();
-    
   });  
 }
 
@@ -47,7 +44,6 @@ function addToCartListeners() {
     $("#displayToppings").hide();
     $(':checkbox:checked').prop('checked',false);
     $(':radio:checked').prop('checked',false);
-    $("#showPrice").hide();
   });
   $("div.modal-footer").on("click", "button#addPizzaToCart", function() {
     var inputtedMenu = $("input:radio[name=menu]:checked").val();
@@ -59,18 +55,43 @@ function addToCartListeners() {
     var newOrder = new Pizza (inputtedMenu, inputtedSize, inputtedToppings);
     newOrder.costOfPizza();
     $("#myModal").hide();
-    $("#showPrice").show();
+    $("#showOpt").show();
     $(".menu").html(inputtedMenu);
     $(".pizza-size").html(inputtedSize);
     $(".add-toppings").html(" " + inputtedToppings);
-    $(".total-price").html("$" + newOrder.cost);
+    $(".total-price").html(" " + "$" + newOrder.cost);
   });
+}
+
+function addDeliveryListeners() {
+  $("div#orderOpt").on("click", "input:radio[value='Delivery']", function() {
+    $("#displayAddressFrm").show();
+  });   
+}
+
+function addAddressListeners() {
+  $("div.add-address").on("click", "button#addBtn", function() {
+    $("#showCheckout").show();
+    $(".input-address").show();
+    var inputtedAddress = $("#input-address").val();
+    $(".delivery-address").html(inputtedAddress);
+  });   
+}
+
+function addCheckoutListeners() {
+  $("div.checkout").on("click", "button#checkoutBtn", function() {
+    location.reload();
+    alert("Thank you for order!")
+  });   
 }
 
 $(document).ready(function() {
   cancelListeners();
   addDisplayToppings();
   addToCartListeners();
+  addDeliveryListeners();
+  addAddressListeners();
+  addCheckoutListeners();
   $("form#frmGetStarted").submit(function(event) {
     event.preventDefault();
     $("#myModal").show();

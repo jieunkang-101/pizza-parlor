@@ -70,8 +70,6 @@
                       <p><em>- Additional toppings $2 each.</em></p>
                       <input type="radio" name="toppingOpt" value="addTopping"> Add Additional Toppings
                     </label>
-                  </div>
-                  <div class="radio" id="chooseOpt">
                     <label class="radio-inline">
                       <input type="radio" name="toppingOpt" value="addTopping" checked> No Customization
                     </label>
@@ -114,22 +112,45 @@
           </div>
         </div>    
       </div>  <!-- modal close -->
-      <div id="showPrice">
-        <h4>Order Contents</h4>
-        <hr>
-        <ul>
-          <li>Pizza : <span class="menu"></span></li>
-          <li>Size : <strong><span class="pizza-size"></span></strong></li>
-          <li>Additional Toppings : <strong><span class="add-toppings"></span></strong></li>
-        </ul>
-        <hr>  
-        <h4>Total : <span class="total-price"></span></h4>  
-        <hr>
-        <br>
-        <div class="checkout">
-          <button type="submit" class="btn btn-danger" id="checkoutBtn">PROCEED TO CHECKOUT</button>
+      <div id="showOpt">
+        <h4>Order Options</h4>
+        <div class="radio" id="orderOpt">
+          <label class="radio-inline">
+            <input type="radio" name="orderOpt" value="PickUp">Pick Up
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="orderOpt" value="Delivery">Delivery
+          </label>
+        </div> 
+        <div id="displayAddressFrm">
+          <label for="address">Address : </label>
+          <input type="text" class="form-control" id="input-address" placeholder="123 nice street, Portland OR 90000"> 
         </div>
-      </div>
+        <br>
+        <div class="add-address">
+          <button type="submit" class="btn btn-danger" id="addBtn">ADD</button>
+        </div> 
+        <br>
+        <hr>
+        <div id="showCheckout">
+          <h4>Order Contents : </h4>
+          <ul>
+            <li>Pizza : <span class="menu"></span></li>
+            <li>Size : <strong><span class="pizza-size"></span></strong></li>
+            <li>Additional Toppings : <strong><span class="add-toppings"></span></strong></li>
+          </ul>
+          <hr>  
+          <h4>Total : <span class="total-price"></span></h4>  
+          <hr>
+          <div class="input-address">
+            <h5>Delivery Address : </h5>
+            <p><span class="delivery-address"></span></p>
+          </div>
+          <div class="checkout">
+            <button type="submit" class="btn btn-danger" id="checkoutBtn">PROCEED TO CHECKOUT</button>
+          </div>
+        </div> 
+      </div>    
     </div>
   </body>
 </html>
