@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/styles.css" type="text/css" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One&display=swap" rel="stylesheet">
     <script src="js/jquery-3.4.1.js"></script>
     <script src="js/scripts.js" ></script>
     <title>Pizza Parlor</title>
   </head>
   <body>
+    <h1>Pizza Hat</h1>
+    <i class="fas fa-pizza-slice"></i>
     <div class="container">
       <div id="welcome">
         <form id="frmGetStarted">
@@ -15,7 +18,7 @@
         </form>
       </div>
       <div class="modalFade" id="myModal" role="dialog">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -23,7 +26,7 @@
             <div class="modal-body">
               <form>
                 <div class="form-group" id="displaySize">
-                  <label for="size">Select Your Size:</label>
+                  <label for="size" class="label-font">Select Your Size:</label>
                   <div class="radio">
                     <label class="radio-inline">
                       <input type="radio" name="pizzaSize" value="Family"> Family (16 inches)
@@ -36,7 +39,7 @@
                     </label>
                   </div>
                   <hr>
-                  <label for="option">Additional Customizaion:</label>   
+                  <label for="option" class="label-font">Additional Customizaion:</label>   
                   <div class="radio" id="chooseOpt">
                     <label class="radio-inline">
                       <input type="radio" name="toppingOpt" value="addTopping"> Add Additional Toppings
@@ -45,8 +48,8 @@
                 </div>
                 <hr>
                 <div class="form-group" id="displayToppings">
-                  <label for="toppings">Customize Included Toppings</label>
-                  <p>-Additional toppings $2 each.</p>
+                  <label for="toppings" class="label-font">Customize Included Toppings</label>
+                  <p><em>- Additional toppings $2 each.</em></p>
                   <div class="checkbox">
                     <label>
                       <input type="checkbox" name="pizzaToppings" value="Cheese"> Cheese
@@ -75,16 +78,16 @@
                 </div>
               </form>
               <br>
-              <br>
+              <hr>
               <div id="showPrice">
                 <h4>Order Contents</h4>
                 <hr>
-                <p>Size: <span class="pizza-size"></span></p>
-                <p>Additional Toppings: <span class="add-toppings"></span></p>
-                <ul >
+                <ul>
+                  <li>Size: <strong><span class="pizza-size"></span></strong></li>
+                  <li>Additional Toppings: <strong><span class="add-toppings"></span></strong></li>
                 </ul>
-                <hr>
-                <p>TOTAL: <span class="total-price"></span></p>
+                <hr>  
+                <h4>Total : <span class="total-price"></span></h4>  
               </div>
             </div>  
             <div class="modal-footer">

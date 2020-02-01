@@ -1,10 +1,28 @@
 body, html {
 font-family: Arial,Helvetica,sans-serif;
-margin-top: 50px;
+
 background-image: url("../img/pizza-main.jpg");
 background-repeat: no-repeat;
 background-size: cover;
-background-position-y: 62px;
+background-position-y: 100px;
+}
+
+#container {
+  margin-top: 50px;
+}
+
+H1 {
+  font-size: 6em;
+  font-family: 'Paytone One', sans-serif;
+  text-align: center;
+  color: rgb(128, 59, 59);
+}
+
+#welcome {
+  display: flex;
+  justify-content: center;
+  height: 200px;
+  align-items: center;
 }
 
 #frmGetStarted {
@@ -13,6 +31,7 @@ background-position-y: 62px;
 
 #myModal {
   display: none;
+  /* background: linear-gradient(#f5e5e7, #857763, #f7d1d7, #857763); */
 }
 
 #showPrice {
@@ -21,4 +40,19 @@ background-position-y: 62px;
 
 #displayToppings {
   display: none;
+}
+
+.label-font {
+  font-size: 1.5em;
+  color: rgb(54, 7, 7);
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+  margin-left: 50px;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+  margin-left: 50px;
 }

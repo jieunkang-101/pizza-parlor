@@ -20,28 +20,30 @@ Pizza.prototype.costOfPizza = function() {
 }
 
 // =========User Interface Logic===========
+
 function cancelListeners() {
   $("div.modal-footer").on("click", "button#cancelAddPizza", function() {
     $(':checkbox:checked').prop('checked',false);
     $(':radio:checked').prop('checked',false);
     $("#showPrice").hide();
-    $(".close").click(function() {
-      $("#myModal").hide();
-      $("#displayToppings").hide();
-      $(':checkbox:checked').prop('checked',false);
-      $(':radio:checked').prop('checked',false);
-      $("#showPrice").hide();
-    });
   }); 
 }
 
 function addDisplayToppings() {
   $("div#chooseOpt").on("click", "input:radio[name='toppingOpt']", function() {
     $("#displayToppings").show();
+    
   });  
 }
 
 function addToCartListeners() {
+  $(".close").click(function() {
+    $("#myModal").hide();
+    $("#displayToppings").hide();
+    $(':checkbox:checked').prop('checked',false);
+    $(':radio:checked').prop('checked',false);
+    $("#showPrice").hide();
+  });
   $("div.modal-footer").on("click", "button#addPizzaToCart", function() {
     var inputtedSize = $("input:radio[name=pizzaSize]:checked").val();
     var inputtedToppings = [];
