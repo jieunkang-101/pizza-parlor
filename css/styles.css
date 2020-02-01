@@ -31,7 +31,14 @@ H1 {
 
 #myModal {
   display: none;
-  /* background: linear-gradient(#f5e5e7, #857763, #f7d1d7, #857763); */
+}
+
+img {
+  width: 230px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 #showPrice {

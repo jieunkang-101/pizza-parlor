@@ -26,6 +26,7 @@ function cancelListeners() {
     $(':checkbox:checked').prop('checked',false);
     $(':radio:checked').prop('checked',false);
     $("#showPrice").hide();
+    $("#displayToppings").hide();
   }); 
 }
 
